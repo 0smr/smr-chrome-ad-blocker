@@ -1,0 +1,23 @@
+{
+	"name": "SMR AD-Blocker",
+	"description": "simple chrome ad-blocker.",
+	"version": "0.1.0",
+	"manifest_version": 3,
+	"permissions": [
+		"scripting",
+		"tabs",
+		"activeTab"
+	],
+	"background": {
+		"service_worker": "worker.js"
+	},
+	"content_scripts": [{
+		"matches": [
+			"<all_urls>"
+		],
+		"js": ["adRemover.js"]
+	}],
+	"action": {
+		"default_popup": "settings.html"
+	}
+}
